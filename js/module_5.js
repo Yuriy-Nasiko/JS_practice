@@ -270,3 +270,111 @@
 // console.log(dog.legs);
 
 //
+
+// const animal = {
+//   eats: true,
+// };
+// const dog = Object.create(animal);
+// dog.barks = true;
+
+// for (const key in dog) {
+//   console.log(key);
+// }
+
+// for (const key in dog) {
+//   if (dog.hasOwnProperty(key)) {
+//     console.log(key);
+//   }
+// }
+
+// for (const key in dog) {
+//   if (!dog.hasOwnProperty(key)) {
+//     continue;
+//   }
+//   console.log(key);
+// }
+
+// for (const key in dog) {
+//   if (!dog.hasOwnProperty(key)) continue;
+
+//   console.log(key); // barks
+// }
+
+// const dogKey = Object.keys(dog);
+// console.log(...dogKey);
+
+//
+
+// class User {}
+
+// const mango = new User();
+// console.log(mango);
+
+// console.log(User);
+
+// new User();
+
+//
+
+// class User {
+//   constructor(name, email, item) {
+//     this.name = name;
+//     this.email = email;
+//     this.item = item;
+//   }
+// }
+
+// const mango = new User("Mango", "mango@mail.com");
+// console.log(mango);
+
+// const poly = new User("Poly", "polymorf@mail.com");
+// console.log(poly);
+
+// console.log(mango.email);
+
+// console.log(mango.hasOwnProperty(name));
+
+// const mangoItem = Object.keys(mango);
+// console.log(mangoItem);
+
+//
+
+// class User {
+//   constructor({ name, email }) {
+//     this.name = name;
+//     this.email = email;
+//   }
+// }
+
+// const mango = new User({ name: "Mango", email: "mango@mail.com" });
+// console.log(mango);
+
+//
+
+// class User {
+//   constructor({ name, email }) {
+//     this.name = name;
+//     this.email = email;
+//   }
+// }
+
+// const mango = new User({ name: "Mango", email: "mango@mail.com" });
+// console.log(mango);
+
+// const poly = new User({ name: "Поли", email: "poly@mail.com" });
+// console.log(poly);
+
+//
+
+class User {
+  constructor({ name, email }) {
+    this.name = name;
+    this.email = email;
+  }
+  getEmail() {
+    this.email;
+  }
+  changeEmail(newEmail) {
+    this.email = newEmail;
+  }
+}

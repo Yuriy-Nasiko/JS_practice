@@ -101,8 +101,10 @@ const parent = {
 };
 // Change code below this line
 
-const child = {};
+const child = Object.create(parent);
 
 // Change code above this line
-child.name = "Jason";
-child.age = 27;
+
+console.log((child.name = "Jason"));
+console.log((child.age = 27));
+console.log(child.hasOwnProperty("name"));
