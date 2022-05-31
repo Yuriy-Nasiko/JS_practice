@@ -93,18 +93,41 @@
 /Прототип объекта
 */
 
-const parent = {
-  name: "Stacey",
-  surname: "Moore",
-  age: 54,
+// const parent = {
+//   name: "Stacey",
+//   surname: "Moore",
+//   age: 54,
+//   heritage: "Irish",
+// };
+// // Change code below this line
+
+// const child = Object.create(parent);
+
+// // Change code above this line
+
+// console.log((child.name = "Jason"));
+// console.log((child.age = 27));
+// console.log(child.hasOwnProperty("name"));
+
+/*
+/цепочка прототипов
+*/
+
+const ancestor = {
+  name: "Paul",
+  age: 83,
+  surname: "Dawson",
   heritage: "Irish",
 };
 // Change code below this line
 
-const child = Object.create(parent);
+const parent = {};
+parent.name = "Stacey";
+parent.surname = "Moore";
+parent.age = 54;
+
+const child = {};
+child.name = "Jason";
+child.age = 27;
 
 // Change code above this line
-
-console.log((child.name = "Jason"));
-console.log((child.age = 27));
-console.log(child.hasOwnProperty("name"));

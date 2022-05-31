@@ -240,17 +240,18 @@
 //   firstName: "Jacob",
 //   lastName: "Hendrix",
 //   getFullNmae() {
-//     console.log(`${this.firstName} ${this.lastName}`);
+//     // console.log(`${this.firstName} ${this.lastName}`);
 //     return `${this.firstName} ${this.lastName}`;
 //   },
 // };
 
 // function makeMessage(callback) {
-//   callback();
+//   console.log(callback());
 //   console.log(`Обрабатываем заявку от ${callback()}.`);
 // }
 
 // makeMessage(customer.getFullNmae.bind(customer));
+// makeMessage(customer.getFullNmae);
 
 //
 
@@ -366,15 +367,219 @@
 
 //
 
-class User {
-  constructor({ name, email }) {
-    this.name = name;
-    this.email = email;
-  }
-  getEmail() {
-    this.email;
-  }
-  changeEmail(newEmail) {
-    this.email = newEmail;
-  }
-}
+// class User {
+//   constructor({ name, email }) {
+//     this.name = name;
+//     this.email = email;
+//   }
+//   getEmail() {
+//     this.email;
+//   }
+//   changeEmail(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+
+//
+
+// const employee = {
+//   baseSalary: 3000,
+//   overTime: 10,
+//   rate: 20,
+// };
+
+// const getWage = function () {
+//   return this.baseSalary + this.overTime + this.rate;
+// };
+
+// console.log(getWage.bind(employee));
+
+//
+
+// function greet(clientName) {
+//   return `${clientName}, weclome in ${this.service} `;
+// }
+
+// const steam = {
+//   service: "Steam",
+// };
+
+// const steamGreeter = greet.bind(steam);
+// console.log(steamGreeter("Mango"));
+
+//
+
+// const showThis = () => {
+//   console.log("this", this);
+// };
+
+// // console.log(showThis());
+// const undFn = showThis();
+
+// console.log(undFn);
+
+// const user = {
+//   userName: "Mango",
+// };
+// user.showContext = showThis;
+// user.showContext();
+
+// let user = {
+//   name: "Joy",
+//   age: 30,
+//   sayHi() {
+//     console.log(user.name);
+//   },
+// };
+
+// const admin = user;
+// user = null;
+
+// admin.sayHi();
+
+//
+
+// let user = {
+//   name: "Джон",
+//   go: function () {
+//     alert(this.name);
+//   },
+// };
+
+// user.go();
+
+//
+
+// const customer = {
+//   firstName: "Jacob",
+//   lastName: "Mercer",
+//   getFullName() {
+//     return `${this.firstName} ${this.lastName}`;
+//   },
+// };
+
+// function makeMessage(callback) {
+//   // callback(); //это вызов метода getFullName без объекта
+//   console.log(`Обрабатываем заявку от ${callback()}.`);
+// }
+
+// makeMessage(customer.getFullName.bind(customer)); // Будет ошибка при вызове функции
+// makeMessage(customer.getFullName); // Будет ошибка при вызове функции
+
+// makeMessage(customer.getFullName.bind(customer));
+
+//
+
+// const add = function (...args) {
+//   console.log(args); // массив всех аргументов
+// };
+
+// add(1, 2, 3);
+// add(1, 2, 3, 4, 5);
+
+// let [x, ...remaining] = [1, 2, 3, 4, 5];
+// console.log(x);
+
+// //
+
+// console.log();
+// console.log(null.length);
+
+//
+
+// function greatGuest(greeting) {
+//   console.log(`${greeting}, ${this.userName}.`);
+// }
+
+// const mango = {
+//   userName: "Mango",
+// };
+
+// greatGuest.call(mango, "Welcome");
+
+// greatGuest.apply(mango, ["Welcome"]);
+
+// //
+
+// function great(clientName) {
+//   return `${clientName}, Welcome in ${this.service}`;
+// }
+
+// const steam = {
+//   service: "Steam",
+// };
+
+// const steamGreater = great.bind(steam);
+// console.log(steamGreater("Mango"));
+
+// //
+
+// const customer = {
+//   firstName: "Jacob",
+//   lastName: "Mercer",
+//   getFullName() {
+//     return `${this.firstName} ${this.lastName}`;
+//   },
+// };
+
+// function maleMessage(callback) {
+//   // callback();
+//   // console.log(`Obrabativvaem zayavku ot ${callback()}`);
+//   return callback();
+// }
+
+// console.log(maleMessage(customer.getFullName.bind(customer)));
+
+//
+
+// const animal = {
+//   leg: 4,
+// };
+
+// const dog = Object.create(animal);
+// dog.name = "Mango";
+
+// console.log(dog);
+// console.log(animal);
+// console.log(animal.isPrototypeOf(dog));
+
+// console.log(dog.hasOwnProperty("name"));
+// console.log(dog.hasOwnProperty("leg"));
+// console.log(dog.leg);
+// console.log(dog.__proto__);
+
+// const objA = {
+//   name: "Mango",
+// };
+
+// const objB = Object.create(objA);
+// objB.nameB = "Viki";
+
+// const objC = Object.create(objB);
+// objC.nameC = "Ajax";
+
+// console.log(objC);
+// console.log(objC.name);
+// console.log(objC.nameB);
+// console.log(objC.__proto__);
+
+// console.log(objB);
+
+//
+
+// const animal = {
+//   eats: true,
+// };
+
+// const dog = Object.create(animal);
+// dog.name = "Barks";
+
+// console.log(Object.keys(dog));
+// console.log(Object.values(dog));
+
+//
+
+class User {}
+
+const mango = new User();
+console.log(mango);
