@@ -579,7 +579,150 @@
 
 //
 
-class User {}
+// class User {}
 
-const mango = new User();
-console.log(mango);
+// const mango = new User();
+// console.log(mango);
+
+//
+
+// class User {
+//   constructor(name, email) {
+//     this.name = name;
+//     this.email = email;
+//   }
+// }
+
+// const mango = new User("Mango", "email@gmail.com");
+// console.log(mango);
+
+// const poly = new User("Poly", "poly@gmail.com");
+// console.log(poly);
+
+// console.log(poly.email);
+// console.log(mango.name);
+
+//
+
+// class User {
+//   constructor(name, email) {
+//     this.name = name;
+//     this.email = email;
+//   }
+//   getEmail() {
+//     return this.email;
+//   }
+// }
+
+// const mango = new User("Mango", "email@gmail.com");
+// console.log(mango);
+// console.log(mango.getEmail());
+
+// const obj = {
+//   a: 12,
+//   b: "Mabgo",
+//   getA() {
+//     return this.a + this.b;
+//   },
+// };
+
+// const keyObj = Object.keys(obj);
+// console.log(keyObj);
+
+// console.log(obj.getA());
+
+//
+// const objC = {
+//   c: 3,
+//   // __proto__: objA,
+// };
+// const objB = {
+//   b: 2,
+//   __proto__: objC,
+// };
+
+// const objA = {
+//   a: 1,
+//   __proto__: objB,
+// };
+
+// console.log(objA);
+// console.log(objB);
+// console.log(objA.b);
+// console.log(objA);
+
+// console.log(objA.c);
+// // console.log(objC.a);
+
+// console.log(objC);
+// objC.c = 55;
+
+// console.log(objA.c);
+
+// console.log((objA.b = 66));
+// console.log(objA);
+// console.log(objB);
+
+// console.log(objA.hasOwnProperty(constructor));
+// console.log(objA.propertyIsEnumerable);
+
+//class
+
+const Car = function ({ brand, model, price } = {}) {
+  this.brand = brand;
+  this.model = model;
+  this.price = price;
+};
+
+const myCar = new Car({
+  brand: "Audi",
+  model: "Q3",
+  price: 3500,
+});
+
+const myCar2 = new Car({
+  brand: "BMW",
+  model: "X6",
+  price: 13500,
+});
+
+console.log(myCar);
+console.log(myCar2);
+
+// class User {
+//   constructor(nameUser, emailUser) {
+//     this.name = nameUser;
+//     this.email = emailUser;
+//   }
+// }
+
+// const user = new User("Mango", "postuser@gmail.com");
+// console.log(user);
+
+// const user2 = new User("Poly", "userpoly@gmail.com");
+// console.log(user2);
+
+Car.prototype.discountPrice = function (discount) {
+  return (this.price = this.price * discount);
+};
+
+myCar2.discountPrice(1.2);
+console.log(myCar2);
+
+Car.prototype.newBrand = function (newBrandCar, newModel) {
+  this.brand = newBrandCar;
+  this.model = newModel;
+};
+
+myCar.newBrand("Volvo", "T90");
+console.log(myCar);
+
+const myCar3 = {
+  __proto__: myCar,
+  // __proto__: myCar2,
+};
+
+console.log(myCar3);
+const objKeys = Object.keys(myCar);
+console.log(objKeys);
+console.log(Object.values(myCar));
