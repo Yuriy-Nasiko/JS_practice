@@ -668,26 +668,26 @@
 
 //class
 
-const Car = function ({ brand, model, price } = {}) {
-  this.brand = brand;
-  this.model = model;
-  this.price = price;
-};
+// const Car = function ({ brand, model, price } = {}) {
+//   this.brand = brand;
+//   this.model = model;
+//   this.price = price;
+// };
 
-const myCar = new Car({
-  brand: "Audi",
-  model: "Q3",
-  price: 3500,
-});
+// const myCar = new Car({
+//   brand: "Audi",
+//   model: "Q3",
+//   price: 3500,
+// });
 
-const myCar2 = new Car({
-  brand: "BMW",
-  model: "X6",
-  price: 13500,
-});
+// const myCar2 = new Car({
+//   brand: "BMW",
+//   model: "X6",
+//   price: 13500,
+// });
 
-console.log(myCar);
-console.log(myCar2);
+// console.log(myCar);
+// console.log(myCar2);
 
 // class User {
 //   constructor(nameUser, emailUser) {
@@ -702,27 +702,359 @@ console.log(myCar2);
 // const user2 = new User("Poly", "userpoly@gmail.com");
 // console.log(user2);
 
-Car.prototype.discountPrice = function (discount) {
-  return (this.price = this.price * discount);
-};
+// Car.prototype.discountPrice = function (discount) {
+//   return (this.price = this.price * discount);
+// };
 
-myCar2.discountPrice(1.2);
-console.log(myCar2);
+// myCar2.discountPrice(1.2);
+// console.log(myCar2);
 
-Car.prototype.newBrand = function (newBrandCar, newModel) {
-  this.brand = newBrandCar;
-  this.model = newModel;
-};
+// Car.prototype.newBrand = function (newBrandCar, newModel) {
+//   this.brand = newBrandCar;
+//   this.model = newModel;
+// };
 
-myCar.newBrand("Volvo", "T90");
-console.log(myCar);
+// myCar.newBrand("Volvo", "T90");
+// console.log(myCar);
 
-const myCar3 = {
-  __proto__: myCar,
-  // __proto__: myCar2,
-};
+// const myCar3 = {
+//   __proto__: myCar,
+//   // __proto__: myCar2,
+// };
 
-console.log(myCar3);
-const objKeys = Object.keys(myCar);
-console.log(objKeys);
-console.log(Object.values(myCar));
+// console.log(myCar3);
+// const objKeys = Object.keys(myCar);
+// console.log(objKeys);
+// console.log(Object.values(myCar));
+
+/**
+ *
+ *
+ */
+
+//
+// const animal = {
+//   legs: 4,
+// };
+// const dog = Object.create(animal);
+// dog.name = "Манго";
+
+// console.log(dog); // { name: 'Манго', __proto__: animal }
+// console.log(animal.isPrototypeOf(dog)); // true
+// console.log(dog.legs);
+// console.log(dog.hasOwnProperty("legs"));
+// console.log(dog.eys);
+// console.log(dog.close);
+
+//
+
+// const animal = {
+//   legs: 4,
+// };
+
+// const dog = {
+//   barks: true,
+// };
+
+// dog.__proto__ = animal;
+// console.log(dog.legs);
+
+//
+// const animal = { barks: true };
+// const dog = Object.create(animal);
+// dog.eats = true;
+
+// for (const key in dog) {
+//   console.log(key);
+// }
+
+// for (const key in dog) {
+//   if (dog.hasOwnProperty(key)) {
+//     continue;
+//   }
+//   console.log(key);
+// }
+
+//
+
+// const person = Object.create(null);
+// console.log(person);
+
+// Object.defineProperty(person, "firstName", {
+//   value: "Yevgenia",
+//   // writable: true,
+//   // enumerable: true,
+//   // configurable: true,
+// });
+
+// console.log(person);
+
+//
+
+// const printNumbers = {
+//   phrase: "The current value is:",
+//   numbers: [1, 2, 3, 4],
+
+//   loop() {
+//     this.numbers.forEach(function (number) {
+//       console.log(this.phrase, number);
+//     });
+//   },
+// };
+// printNumbers.loop();
+
+//
+
+// const customer = {
+//   firstName: "Jacob",
+//   lastName: "Mercer",
+//   getFullName() {
+//     return `${this.firstName} ${this.lastName}`;
+//   },
+// };
+
+// function makeMessage(callback) {
+//   // callback() это вызов метода getFullName без объекта
+//   console.log(`Обрабатываем заявку от ${callback()}.`);
+// }
+
+// makeMessage(customer.getFullName); // Будет ошибка при вызове функции
+
+//
+
+// function ask(question, yes, no) {
+//   if (confirm(question)) yes();
+//   else no();
+// }
+
+// ask(
+//   "Вы согласны?",
+//   function () {
+//     alert("Вы согласились.");
+//   },
+//   function () {
+//     alert("Вы отменили выполнение.");
+//   }
+// );
+
+// {
+//   const ask = (question, yes, no) => {
+//     if (confirm(question)) {
+//       yes();
+//     } else {
+//       no();
+//     }
+//   };
+
+//   ask(
+//     "Вы согласны?",
+//     () => alert("Вы согласились."),
+//     () => alert("Вы отменили выполнение.")
+//   );
+// }
+
+//
+
+// console.log(this === window);
+// console.log(window);
+// console.log(alert());
+// window.alert(1);
+// const message = "Hello world!";
+// alert(message);
+
+// let age = prompt("Возраст?", 18);
+
+// const message =
+//   age < 3
+//     ? "Привіт малиш"
+//     : age < 18
+//     ? "Привіт"
+//     : age < 100
+//     ? "Добридень!"
+//     : "Який не звичний вік!";
+// console.log(message);
+
+// const question = prompt("Какое «официальное» название JavaScript?", "");
+// let messQue = "";
+
+// if (question === "ECMAScript") {
+//   messQue = "Верно!";
+// } else {
+//   messQue = "Не знаете? ECMAScript!";
+// }
+// console.log(messQue);
+
+//
+
+// const getNum = prompt("Введи число", "");
+// let message = 0;
+
+// if (getNum > 0) {
+//   message = 1;
+//   alert(message);
+// } else if (getNum < 0) {
+//   message = -1;
+//   alert(message);
+// } else {
+//   message;
+// }
+// console.log(message);
+
+//
+
+// let result;
+
+// if (a + b < 4) {
+//   result = "Мало";
+// } else {
+//   result = "Много";
+// }
+
+// const result = (a + < 4) ? "Мало" : "Много";
+
+//
+
+// let message;
+
+// if (login == "Сотрудник") {
+//   message = "Привет";
+// } else if (login == "Директор") {
+//   message = "Здравствуйте";
+// } else if (login == "") {
+//   message = "Нет логина";
+// } else {
+//   message = "";
+// }
+
+// let login = prompt("Введи логин", "");
+
+// const message =
+//   login === "Сотрудник"
+//     ? "Привет"
+//     : login === "Директор"
+//     ? "Здравствуйте"
+//     : login == ""
+//     ? "Нет логина"
+//     : "";
+
+// console.log(message);
+
+// const fn = function (value = "") {
+//   const message =
+//     value === "Сотрудник"
+//       ? "Привет"
+//       : value === "Директор"
+//       ? "Здравствуйте"
+//       : value == ""
+//       ? "Нет логина"
+//       : "";
+//   //   console.log(message);
+//   return message;
+// };
+
+// console.log(fn("Сотрудник"));
+// console.log(fn());
+
+//
+
+// let i = 0;
+// let item = "";
+
+// while (i < 10) {
+//   item += "1";
+//   console.log(item);
+//   i++;
+// }
+
+// console.log(i);
+
+//
+
+// function greet(name) {
+//   return name;
+// }
+
+// function registerGuest(name, callback) {
+//   console.log(`Регистрируем гостя ${name}`);
+//   return callback(name);
+// }
+
+// console.log(registerGuest("Ajax", greet));
+
+//
+
+// function registerGuest(name, callback) {
+//   console.log(`Регистрируем гостя ${name}`);
+//   callback(name);
+//   return name;
+// }
+
+// registerGuest("Mango", function (name) {
+//   console.log(name + " " + "Rocky");
+// });
+
+// console.log(
+//   registerGuest("Poly", (name) => console.log(name + " " + "Tyncky"))
+// );
+
+// //
+// function processCall(recipient, onAvailible, onNotAvailible) {
+//   const isRecipientAvailible = Math.random() > 0.5;
+
+//   if (!isRecipientAvailible) {
+//     onNotAvailible(recipient);
+//     return;
+//   }
+
+//   onAvailible(recipient);
+// }
+
+// function takeCall(name) {
+//   console.log(`Соединяем с ${name}, ожидайте...`);
+// }
+
+// function activateAnsweringMachine(name) {
+//   console.log(`Абонент ${name} недоступен, оставьте соощение`);
+// }
+
+// function leaveHoloMessage(name) {
+//   console.log(`Абонент ${name} не доступен, запишите голограмму`);
+// }
+
+// processCall("Mango", takeCall, activateAnsweringMachine);
+// processCall("Poly", takeCall, leaveHoloMessage);
+
+//
+
+// const arr = ["Bilbo", "Gandalf", "Nazgul"].forEach((item, index, array) => {
+//   alert(`${item} имеет позицию ${index} в ${array}`);
+// });
+// const arr = ["Bilbo", "Gandalf", "Nazgul", "Bilbo"];
+// console.log(arr.lastIndexOf("Bilbo", arr.length));
+
+// console.log(arr.includes("Bilbo", 4));
+
+//
+
+// const arr = [undefined];
+// console.log(arr.indexOf(undefined));
+
+// console.log(NaN === NaN);
+// console.log(null === null);
+
+// console.log([] === []);
+
+// console.log(1 != 1);
+
+//
+
+const arr = ["Bilbo", "Gandalf", "Nazgul"];
+
+// arr.forEach(function (item) {
+//   console.log(item);
+// });
+
+arr.forEach((item) => console.log(item));
+
+const arr2 = [1, 2, 3, 1];
+console.log(arr2.indexOf(1));
